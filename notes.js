@@ -33,7 +33,7 @@ const removeNote = (title) => {
     saveNotes(notesToKeep);
     console.log(chalk.green("Note removed successfully!"));
   } else {
-    console.log(chalk.red("Note not found!"));
+    throw new Error(chalk.red("Note not found!"));
   }
 };
 
@@ -51,7 +51,7 @@ const readNote = (title) => {
     console.log(chalk.green.inverse(`Title: ${note.title}`));
     console.log(`Body : ${note.body}`);
   } else {
-    console.log(chalk.red.inverse("note not found"));
+    throw new Error(chalk.red.inverse("note not found"));
   }
 };
 

@@ -46,7 +46,11 @@ yargs.command({
     },
   },
   handler: (argv) => {
-    removeNote(argv.title);
+    try {
+      removeNote(argv.title);
+    } catch (error) {
+      console.log(error.message);
+    }
   },
 });
 
@@ -69,7 +73,11 @@ yargs.command({
     },
   },
   handler: (argv) => {
-    readNote(argv.title);
+    try {
+      readNote(argv.title);
+    } catch (error) {
+      console.log(error.message);
+    }
   },
 });
 
